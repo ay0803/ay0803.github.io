@@ -82,7 +82,82 @@
               min-height="70vh"
               rounded="lg"
             >
-              <!--  -->
+            <v-row
+            justify="center"
+            style="min-height: 160px;"
+          >
+          <v-sparkline
+    :value="value"
+    :gradient="gradient"
+    :smooth="radius || false"
+    :padding="padding"
+    :line-width="width"
+    :stroke-linecap="lineCap"
+    :gradient-direction="gradientDirection"
+    :fill="fill"
+    :type="type"
+    :auto-line-width="autoLineWidth"
+    auto-draw
+  ></v-sparkline>
+  
+            <v-card
+                class="mx-auto" 
+                elevation="2"
+                width="600px"
+            >
+                問題:硬式テニスで０点のことを２文字で何と言うでしょう？</v-card>
+            </v-row>
+
+            <v-row
+            justify="center"
+            style="min-height: 160px;"
+          >
+
+            <v-col class="shrink">
+              <v-btn
+                class="ma-2"
+                color="third"
+                @click="expand = !expand"
+              >
+                ラブ
+              </v-btn>
+              <v-expand-transition>
+                <v-col
+                  v-show="expand"
+                  height="100"
+                  width="100"
+                  align-content="center"
+                  class="primary text-h1"
+                >
+                <p class="white--text text--lighten-1 text-center text-align-center">○</p>
+            </v-col>
+              </v-expand-transition>
+            </v-col>
+
+            <div class="mx-4 hidden-sm-and-down"></div>
+            <v-col class="shrink">
+              <v-btn
+                class="ma-2"
+                color="third"
+                @click="expand2 = !expand2"
+              >
+                サブ
+              </v-btn>
+              <v-expand-x-transition>
+                <v-col
+                  v-show="expand2"
+                  height="100"
+                  width="100"
+                  align-content="center"
+                  class="secondary text-h1"
+                >
+                <p class="red--text text--lighten-1 text-center text-align-center">×</p>
+            </v-col>
+              </v-expand-x-transition>
+            </v-col>
+
+
+          </v-row>
             </v-sheet>
           </v-col>
         </v-row>
@@ -94,6 +169,14 @@
   <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
   <script>
+    const gradients = [
+    ['#222'],
+    ['#42b3f4'],
+    ['red', 'orange', 'yellow'],
+    ['purple', 'violet'],
+    ['#00c6ff', '#F0F', '#FF0'],
+    ['#f72047', '#ffd200', '#1feaea'],
+  ]
     new Vue({
       el: '#app',
       vuetify: new Vuetify(),
@@ -104,6 +187,19 @@
         'Profile',
         'Updates',
         ],
+      expand: false,
+      expand2: false,
+      width: 2,
+      radius: 10,
+      padding: 8,
+      lineCap: 'round',
+      gradient: gradients[5],
+      value: [0, 2, 5, 9, 5, 10, 3, 5, 0, 0, 1, 8, 2, 9, 0],
+      gradientDirection: 'top',
+      gradients,
+      fill: false,
+      type: 'trend',
+      autoLineWidth: false,
         })
     })
   </script>
