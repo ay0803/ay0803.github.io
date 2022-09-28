@@ -56,7 +56,7 @@
                 >
                   <v-list-item-content>
                     <v-list-item-title>
-                      謎解き {{ n }}
+                      Question {{ n }}
                     </v-list-item-title>
                   </v-list-item-content>
                 </v-list-item>
@@ -105,68 +105,8 @@
                 elevation="2"
                 width="600px"
             >
-                問題①:硬式テニスで０点のことを２文字で何と言うでしょう？</v-card>
+                デジタルツイン謎解きゲーム「HEAVEN〜ふたごの惑星にようこそ〜」の予告編動画は準備中です</v-card>
             </v-row>
-
-            <v-row
-            justify="center"
-            style="min-height: 160px;"
-          >
-
-          <v-col class="shrink">
-            <v-img
-              class="ma-2"
-              max-height="200"
-              max-width="150"
-              src="robo_blue2d.png"
-            >
-            </v-img>
-          </v-col>
-
-            <v-col class="shrink">
-              <v-btn
-                class="ma-2"
-                color="third"
-                @click="expand = !expand"
-              >
-                ラブですよ
-              </v-btn>
-              <v-expand-transition>
-                <v-col
-                  v-show="expand"
-                  height="100"
-                  width="100"
-                  align-content="center"
-                  class="primary text-h1"
-                >
-                <p class="white--text text--lighten-1 text-center text-align-center">○</p>
-            </v-col>
-              </v-expand-transition>
-            </v-col>
-
-            <div class="mx-4 hidden-sm-and-down"></div>
-            <v-col class="shrink">
-              <v-btn
-                class="ma-2"
-                color="third"
-                @click="expand2 = !expand2"
-              >
-                サブ
-              </v-btn>
-              <v-expand-x-transition>
-                <v-col
-                  v-show="expand2"
-                  height="100"
-                  width="100"
-                  align-content="center"
-                  class="secondary text-h1"
-                >
-                <p class="red--text text--lighten-1 text-center text-align-center">×</p>
-            </v-col>
-              </v-expand-x-transition>
-            </v-col>
-
-
           </v-row>
             </v-sheet>
           </v-col>
@@ -193,9 +133,9 @@
       data: () => ({
       links: [
         'デジタルツイン謎解きゲーム',
-        'メッセージ',
-        'スコア',
-        'Updates',
+        '#',
+        '#',
+        '#',
         ],
       expand: false,
       expand2: false,
